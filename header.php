@@ -145,9 +145,11 @@
             </ul>
           </div>
           <!-- Navbar Button -->
-          <a href="/stl/#schedule-inspection" class="custom-btn-hover btn btn-danger d-none d-lg-inline-block typography-heading ">
+            <button style=" border: none; background: none; ">
+                      <a href="/stl/#schedule-inspection" class="custom-btn-hover btn btn-danger d-none d-lg-inline-block typography-heading ">
             New Inspection
           </a>
+           </button>
 
         </div>
       </nav>

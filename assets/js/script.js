@@ -496,3 +496,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+const fullText = `St. Louis City • St. Louis County • Spanish Lake • Florissant • Hazelwood • St. Charles City • St. Charles County • Valley Park • Wildwood • Bridgeton • O’Fallon • St. Peters • Lake St. Louis • Harvester • Maryland Heights • Overland • University City • Chesterfield • Arnold • Pacific • Ballwin • Eureka • Maplewood • Kirkwood • Webster Groves • Rock Hill • Brentwood • Town and Country • Des Peres • Clayton • Creve Coeur • Manchester • Shrewsbury • Fenton • Ladue • Richmond Heights • High Ridge • South County • Jefferson County (Imperial, Hillsboro, Barnhart) • Crestwood • Sunset Hills • Wentzville • Cottleville • Glencoe • Tesson Ferry`;
+
+  const shortText = fullText.slice(0, 222);
+  const textElement = document.getElementById('locationsText');
+  const button = document.getElementById('toggleButton');
+
+  let isExpanded = false;
+
+  // Set default shortened text
+  textElement.textContent = shortText;
+  textElement.classList.add('truncated');
+
+  function toggleLocations() {
+    if (isExpanded) {
+      textElement.textContent = shortText;
+      textElement.classList.add('truncated');
+      button.textContent = 'View All Locations';
+    } else {
+      textElement.textContent = fullText;
+      textElement.classList.remove('truncated');
+      button.textContent = 'Show Less';
+    }
+
+    isExpanded = !isExpanded;
+  }

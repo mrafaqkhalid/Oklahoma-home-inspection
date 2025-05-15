@@ -323,7 +323,7 @@ get_header();
 </section>
 
 <!-- Schedule Inspection Section -->
-<section  id="section7" class="primary-color py-4" id="schedule-inspection">
+<section class="primary-color py-4" id="schedule-inspection">
   <div class="container">
     <!-- Step Indicator -->
     <div class="steps mb-4">
@@ -401,7 +401,7 @@ get_header();
               <label class="form-label">Recommended</label>
 
               <div class="recommended-box">
-                <div><i class="fas fa-star text-warning"></i> 8:30 AM</div>
+                <div><i class="fas fa-star text-warning "></i> 8:30 AM</div>
                 <div><i class="fas fa-star text-warning"></i> 1:00 PM</div>
               </div>
             </div>

@@ -135,12 +135,14 @@
                 <i class="fas fa-map-marker-alt text-danger fs-4"></i>
                 <h6 class="text-white mb-0 fs-6">Service Coverage</h6>
               </div>
-              <div class="service-areas-wrapper" style="max-width: 800px;">
-                <p class="text-gray mb-0 small" style="color: #6c757d;">
-                  St. Louis City • St. Louis County • Spanish Lake • Florissant • Hazelwood • St. Charles City • St. Charles County • Valley Park • Wildwood • Bridgeton • O'Fallon • St. Peters • Lake St. Louis
-                  <a href="#" class="text-danger text-decoration-none ms-2">View All Locations</a>
-                </p>
-              </div>
+<div class="service-areas-wrapper">
+  <div class="locations-text" id="locationsText">
+    St. Louis City • St. Louis County • Spanish Lake • Florissant • Hazelwood • St. Charles City • St. Charles County • Valley Park • Wildwood • Bridgeton • O’Fallon • St. Peters • Lake St. Louis • Harvester • Maryland Heights • Overland • University City • Chesterfield • Arnold • Pacific • Ballwin • Eureka • Maplewood • Kirkwood • Webster Groves • Rock Hill • Brentwood • Town and Country • Des Peres • Clayton • Creve Coeur • Manchester • Shrewsbury • Fenton • Ladue • Richmond Heights • High Ridge • South County • Jefferson County (Imperial, Hillsboro, Barnhart) • Crestwood • Sunset Hills • Wentzville • Cottleville • Glencoe • Tesson Ferry
+  </div>
+  <div class="toggle-container">
+    <button class="toggle-btn" onclick="toggleLocations()" id="toggleButton">View All Locations</button>
+  </div>
+</div>
             </div>
           </div>
         </div>
