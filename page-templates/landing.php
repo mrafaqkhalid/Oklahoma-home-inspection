@@ -152,7 +152,6 @@ get_header();
               class="img-fluid mb-3" style="max-height: 250px;">
             <h3 class="typography-heading">Thank You For Serving</h3>
             <p class="typography-small text-secondary">Your courage and commitment never go unnoticed.</p>
-            <p class="typography-small text-secondary">Your courage and commitment never go unnoticed.</p>
           </div>
         </div>
       </div>
