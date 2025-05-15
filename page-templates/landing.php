@@ -151,7 +151,8 @@ get_header();
             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/src/superman.png" alt="Thank You Image"
               class="img-fluid mb-3" style="max-height: 250px;">
             <h3 class="typography-heading">Thank You For Serving</h3>
-            <p class="typography-small text-secondary">Your courage and commitment never go unnoticed. </p>
+            <p class="typography-small text-secondary">Your courage and commitment never go unnoticed.</p>
+            <p class="typography-small text-secondary">Your courage and commitment never go unnoticed.</p>
           </div>
         </div>
       </div>
