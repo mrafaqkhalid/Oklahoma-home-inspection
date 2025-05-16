@@ -758,10 +758,6 @@ h4 {
   /* transition: transform 0.3s ease; */
 }
 
-/* .feature-box:hover i {
-  transform: scale(1.2) rotate(10deg);
-} */
-
 .feature-box h5 {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -775,7 +771,7 @@ h4 {
 }
 
 /* Hover effect */
-.feature-box:hover {
+.why-choose-us .feature-box:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   background-color: #f8f9fa;
@@ -815,8 +811,8 @@ h4 {
 }
 
 .review-icon {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   background-color: #fff0f0;
   color: #bb0a24 !important;
   /* Bootstrap danger red */
@@ -1056,8 +1052,9 @@ h4 {
 /* Headings */
 h2,
 h3 {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: bold;
+  padding: 1rem 0;
 }
 
 /* Responsive */
@@ -1194,11 +1191,15 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }
 
 .review-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.03) !important;
+  transition: all 0.4s ease !important;
 }
 
 .review-box .icon {
@@ -1227,9 +1228,10 @@ body {
 }
 
 .review-box p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #555;
   font-weight: 400;
+  text-align: justify;
 }
 
 /* Responsive Design */
@@ -1528,7 +1530,7 @@ input[type="date"].error {
 
 /* Optional: input field style */
 #inspectionTime {
-  font-size: 1.1rem;
+  /* font-size: 1.1rem; */
   padding: 0.5rem 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -2480,10 +2482,7 @@ img.emblem {
   padding: 2rem;
 }
 
-.why-choose-us .feature-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+
 
 .why-choose-us .icon {
   margin-bottom: 1.5rem;
@@ -2822,7 +2821,7 @@ img.emblem {
   .service-areas-wrapper {
     opacity: 1;
     max-width: 800px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #fff;
     position: relative;
     /* border: 1px solid #ddd; */
@@ -2836,12 +2835,6 @@ img.emblem {
       max-width: 500px !important;
     }
   }
-  .locations-text {
-    /* max-height: 3.3em;  */
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-  }
-
   .locations-text.expanded {
     max-height: 1000px; /* Fully expanded */
   }
@@ -2850,15 +2843,6 @@ img.emblem {
     text-align: right;
     margin-top: 0.5rem;
   }
-
-  /* .toggle-btn {
-    background: none;
-    border: none;
-    color: #dc3545;
-    font-weight: 500;
-    cursor: pointer;
-    font-size: 0.85rem;
-  } */
 
   .toggle-btn:hover {
     text-decoration: underline;
