@@ -16,7 +16,7 @@
 
       <!-- Right Column (Contact Form) -->
       <div class="col-lg-6" data-aos="fade-left">
-        <h5 class="fw-semibold text-dark mb-3">Message us</h5>
+        <h4 class="fw-semibold text-dark mb-5">Message us</h4>
         <div id="form-messages"></div>
         <form id="contactForm" class="needs-validation" novalidate>
           <?php wp_nonce_field('stl_nonce', 'nonce'); ?>
@@ -41,7 +41,7 @@
           </div>
           <div class="mb-3">
             <label for="contactMessage" class="form-label">Message <span class="text-danger">*</span></label>
-            <textarea class="form-control" id="contactMessage" name="message" rows="3" required></textarea>
+            <textarea class="form-control" id="contactMessage" name="message" rows="5" required="" style="height: auto;"></textarea>
             <div class="invalid-feedback">Please enter your message.</div>
           </div>
           <div class="d-flex justify-content-end">

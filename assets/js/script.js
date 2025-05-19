@@ -9,55 +9,6 @@ jQuery(document).ready(function($) {
       $icon.toggleClass('fa-bars fa-times');
     });
 
-    // // Mobile dropdown menu handling
-    // const isMobile = () => window.innerWidth < 992;
-    
-    // // Close all dropdowns
-    // const closeAllDropdowns = () => {
-    //   $('.dropdown-menu').removeClass('show');
-    //   $('.dropdown').removeClass('show');
-    //   $('.dropdown-toggle').attr('aria-expanded', 'false');
-    // };
-
-    // // Handle dropdown clicks
-    // $('.dropdown-toggle').on('click', function(e) {
-    //   e.preventDefault();
-    //   e.stopPropagation();
-      
-    //   const $dropdown = $(this).closest('.dropdown');
-    //   const $menu = $dropdown.find('.dropdown-menu');
-    //   const isOpen = $dropdown.hasClass('show');
-      
-    //   // Close other dropdowns first
-    //   $('.dropdown').not($dropdown).removeClass('show');
-    //   $('.dropdown-menu').not($menu).removeClass('show');
-    //   $('.dropdown-toggle').not(this).attr('aria-expanded', 'false');
-      
-    //   // Toggle current dropdown
-    //   $dropdown.toggleClass('show');
-    //   $menu.toggleClass('show');
-    //   $(this).attr('aria-expanded', !isOpen);
-    // });
-
-    // // Close dropdowns when clicking outside
-    // $(document).on('click', function(e) {
-    //   if (!$(e.target).closest('.dropdown').length) {
-    //     closeAllDropdowns();
-    //   }
-    // });
-
-    // // Handle window resize
-    // $(window).on('resize', function() {
-    //   if (!isMobile()) {
-    //     closeAllDropdowns();
-    //   }
-    // });
-
-    // // Initialize dropdowns
-    // $('.dropdown-toggle').each(function() {
-    //   $(this).attr('aria-expanded', 'false');
-    // });
-
     // Animate On Scroll Init
     if (typeof AOS !== 'undefined') {
       AOS.init({ duration: 1000, once: true });
@@ -485,16 +436,116 @@ jQuery(document).ready(function($) {
 // });
 
 // Time Picker 
+const timeDisplay = document.getElementById("inspectionTimeDisplay");
+const timePanel = document.getElementById("timePickerPanel");
+const amBtn = document.getElementById("amBtn");
+const pmBtn = document.getElementById("pmBtn");
+const hourInput = document.getElementById("hour");
+const minuteInput = document.getElementById("minute");
+const hiddenInput = document.getElementById("inspectionTime");
 
-document.addEventListener("DOMContentLoaded", function () {
-  flatpickr("#inspectionTime", {
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "h:i K", // 12-hour format with AM/PM
-    time_24hr: false,
-    minuteIncrement: 10
-  });
+let amPm = "AM";
+
+// Show panel near input
+timeDisplay.addEventListener("click", () => {
+  const rect = timeDisplay.getBoundingClientRect();
+  timePanel.style.display = "block";
+  timePanel.style.top = `${rect.bottom + 5}px`;
+  timePanel.style.left = `${rect.left}px`;
 });
+
+// AM/PM toggle
+amBtn.addEventListener("click", () => {
+  amBtn.classList.add("active");
+  pmBtn.classList.remove("active");
+  amPm = "AM";
+});
+pmBtn.addEventListener("click", () => {
+  pmBtn.classList.add("active");
+  amBtn.classList.remove("active");
+  amPm = "PM";
+});
+
+// Submit time
+function submitTime() {
+  const hour = hourInput.value.padStart(2, '0');
+  const minute = minuteInput.value.padStart(2, '0');
+  const timeString = `${hour}:${minute} ${amPm}`;
+  timeDisplay.value = timeString;
+  hiddenInput.value = timeString;
+  timePanel.style.display = "none";
+  timeDisplay.classList.remove("is-invalid");
+}
+
+// Cancel time picker
+function cancelTime() {
+  timePanel.style.display = "none";
+}
+
+const isMouseOver = false
+
+timePanel.addEventListener("mouseenter",()=>{
+  isMouseOver = true
+})
+
+timePanel.addEventListener("mouseleave",()=>{
+  isMouseOver = false
+})
+
+window.addEventListener("scroll", (e)=>{
+  if(!isMouseOver){
+    timePanel.style.display = "none";
+  }
+  
+})
+
+
+document.addEventListener("click", function (event) {
+  const isClickInside = timePanel.contains(event.target) || timeDisplay.contains(event.target);
+  if (!isClickInside) {
+    timePanel.style.display = "none";
+  }
+});
+
+  // default value of the time picker
+document.addEventListener("DOMContentLoaded", () => {
+  hourInput.value = "12";
+  minuteInput.value = "00";
+  amBtn.classList.add("active");
+  pmBtn.classList.remove("active");
+  amPm = "AM";
+  timeDisplay.value = "";
+  hiddenInput.value = "";
+});
+
+
+  // Add red color to timer input field 
+  const nextBtn = document.getElementById("nextBtn");
+
+nextBtn.addEventListener("click", () => {
+  if (!hiddenInput.value) {
+    timeDisplay.classList.add("is-invalid");
+  } else {
+    timeDisplay.classList.remove("is-invalid");
+  }
+});
+
+
+// remove the red color after selection time 
+
+function submitTime() {
+  const hour = hourInput.value.padStart(2, '0');
+  const minute = minuteInput.value.padStart(2, '0');
+  const timeString = `${hour}:${minute} ${amPm}`;
+  timeDisplay.value = timeString;
+  hiddenInput.value = timeString;
+  timePanel.style.display = "none";
+
+  // ✅ Remove red border if time is now selected
+  timeDisplay.classList.remove("is-invalid");
+}
+
+
 
 
 const fullText = `St. Louis City • St. Louis County • Spanish Lake • Florissant • Hazelwood • St. Charles City • St. Charles County • Valley Park • Wildwood • Bridgeton • O’Fallon • St. Peters • Lake St. Louis • Harvester • Maryland Heights • Overland • University City • Chesterfield • Arnold • Pacific • Ballwin • Eureka • Maplewood • Kirkwood • Webster Groves • Rock Hill • Brentwood • Town and Country • Des Peres • Clayton • Creve Coeur • Manchester • Shrewsbury • Fenton • Ladue • Richmond Heights • High Ridge • South County • Jefferson County (Imperial, Hillsboro, Barnhart) • Crestwood • Sunset Hills • Wentzville • Cottleville • Glencoe • Tesson Ferry`;

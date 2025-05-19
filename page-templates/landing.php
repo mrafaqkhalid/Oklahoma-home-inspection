@@ -174,7 +174,7 @@ get_header();
 </section>
 
 <!-- Review Section -->
-<section id="section5"  class="primary-color reviews-section">
+<section  class="primary-color reviews-section">
   <div class="container text-center">
     <h2 class="section-title" data-aos="zoom-in">WHY CLIENTS TRUST STL HOME INSPECTION SERVICES</h2>
 
@@ -232,7 +232,7 @@ get_header();
 </section>
 
 <!-- Pricing Plans Section -->
-<section id="section6"  class="py-5" id="services-pricing-plans" style="background: linear-gradient(135deg, rgb(187, 10, 36), #212529);">
+<section class="py-5" id="services-pricing-plans" style="background: linear-gradient(135deg, rgb(187, 10, 36), #212529);">
   <div class="container">
     <div class="text-center mb-5" data-aos="fade-down">
       <h2 class="typography-heading text-white display-5">Our Pricing Plans</h2>
@@ -389,14 +389,46 @@ get_header();
               </div>
               <div class="text-muted small mt-2">Available Monday through Saturday</div>
             </div>
-            <div class="col-md-5 sibling-col">
-              <label for="inspectionTime" class="form-label">Preferred Time</label>
-              <div class="time-input-group">
-              <input type="text" id="inspectionTime" class="form-select" placeholder="Select time" required>
-              </div>
-              <div class="text-danger small mt-1" id="time-required" style="display: none;">Please Pick a Time
-              </div>
-            </div>
+<!-- Preferred Time Section -->
+<div class="col-md-5 sibling-col">
+  <label for="inspectionTimeDisplay" class="form-label">Preferred Time</label>
+  <div class="position-relative">
+    <!-- Readonly display input that triggers time picker -->
+    <input type="text" id="inspectionTimeDisplay" class="form-control" placeholder="Click to select time" readonly>
+    <i class="fas fa-clock text-dark position-absolute"
+       style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
+  </div>
+  <!-- Hidden actual input to submit with form -->
+  <input type="hidden" id="inspectionTime" name="inspectionTime">
+
+    <!-- Time Picker Panel (Initially Hidden) -->
+  <div class="time-container border rounded p-3 mt-2 bg-light" id="timePickerPanel" style="opacity: 1;display: block;top: 390px;left: 853.828px;">
+    <div class="time-label">Enter Time</div>
+    <div class="time-boxes d-flex gap-3 mb-3">
+      <div class="time-box">
+        <input type="number" id="hour" class="form-control" min="1" max="12" value="7">
+        <div class="time-label-text text-center small mt-1 d-flex">Hour</div>
+      </div>
+      <div class="time-box">
+        <input type="number" id="minute" class="form-control" min="0" max="59" step="1" value="15">
+        <div class="time-label-text text-center small mt-1 d-flex">Minute</div>
+      </div>
+      <div class="time-box">
+        <div class="am-pm d-flex ">
+          <button type="button" id="amBtn" class=" btn-sm btn-outline-dark active">AM</button>
+          <button type="button" id="pmBtn" class=" btn-sm btn-outline-dark">PM</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-buttons d-flex justify-content-end gap-2">
+      <button type="button" class="btn btn-secondary btn-sm" onclick="cancelTime()">Cancel</button>
+      <button type="button" class="btn btn-success btn-sm" onclick="submitTime()">OK</button>
+    </div>
+  </div>
+
+  <div class="text-danger small mt-1" id="time-required" style="display: none;">Please Pick a Time</div>
+</div>
+
             <div class="col-md-2 recommended-col">
               <label class="form-label">Recommended</label>
 
