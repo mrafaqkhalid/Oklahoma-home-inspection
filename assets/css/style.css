@@ -2191,7 +2191,7 @@ text-area.form-select{
 }
 
 .association-label {
-  color: #6c757d;
+  color: #fff;
   width: 60px;
   font-size: 0.875rem;
 }
@@ -2486,8 +2486,8 @@ text-area.form-select{
 
 
 img.emblem {
-  width: 60px;
-  margin-right: 10px;
+  width: 100px;
+  margin-right: 1rem;
 }
 
 /* Why Choose Us Section */
@@ -2905,6 +2905,7 @@ div#timePickerPanel {
     height: 250px;
     width: 100%;
     padding: 1rem 4rem !important;
+    opacity: 1;
 }
 }
 
@@ -3004,10 +3005,6 @@ div#timePickerPanel {
     color: black;
 }
 
-#timePickerPanel {
-  position: relative;
-  animation: fadeIn 0.2s ease-in-out;
-}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
@@ -3023,4 +3020,6 @@ div#timePickerPanel {
   z-index: 9999  !important;
   background-color: #fff !important;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.15) !important;
+  opacity: 1;
+  animation: fadeIn 0.2s ease-in-out;
 }

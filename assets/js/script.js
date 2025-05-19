@@ -2,11 +2,8 @@ jQuery(document).ready(function($) {
   try {
     // Navbar toggler handling
     $('.navbar-toggler').on('click', function() {
-
-    
-      
-      // Toggle between hamburger and close icon
-      $icon.toggleClass('fa-bars fa-times');
+  const $icon = $(this).find('i'); // assuming the icon is inside the toggler
+  $icon.toggleClass('fa-bars fa-times');
     });
 
     // Animate On Scroll Init
@@ -25,7 +22,12 @@ jQuery(document).ready(function($) {
       lastScroll = st;
     });
 
-    // Step form navigation and validation
+  /**
+   * 
+   * Validation and Navigation on form 
+   * 
+   */
+
     const scheduleForm = $('#inspection-schedule-form');
     const detailsForm = $('#details-form');
     const confirmForm = $('#confirm-form');
@@ -199,6 +201,12 @@ jQuery(document).ready(function($) {
         return;
       }
 
+
+      /**
+       * 
+       * Data send to database from User Filled Form 
+       * 
+       */
       const formData = new FormData();
       formData.append('action', 'submit_inspection_form');
       formData.append('nonce', stl_ajax.nonce);
@@ -309,7 +317,12 @@ jQuery(document).ready(function($) {
 
     updateSteps(currentStep);
 
-    // Contact Form Handling
+    /**
+     * 
+     * 
+     * Contact Form Handling
+     * 
+     */
     $('#contactForm').on('submit', function(e) {
       e.preventDefault();
       console.log('Contact form submitted');
@@ -384,57 +397,6 @@ jQuery(document).ready(function($) {
   }
 });
 
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const nextPageBtn = document.getElementById("nextPageBtn");
-//   const previousBtn = document.getElementById("previousBtn");
-//   const nextPageNameSpan = document.getElementById("nextPageName");
-
-//   const baseUrl = window.siteBaseUrl;
-
-//   const pages = [
-//     { name: "Landing", url: `${baseUrl}/home`, slug: "" },
-//     { name: "Meet", url: `${baseUrl}/meet`, slug: "meet" },
-//     { name: "Residential", url: `${baseUrl}/residential`, slug: "residential" },
-//     { name: "Gas Line", url: `${baseUrl}/gas-line`, slug: "gas-line" },
-//     { name: "Infrared Imaging", url: `${baseUrl}/infrared-imaging`, slug: "infrared-imaging" },
-//     { name: "Mold Sampling", url: `${baseUrl}/mold-sampling`, slug: "mold-sampling" },
-//     { name: "Radon Testing", url: `${baseUrl}/radon-testing`, slug: "radon-testing" },
-//     { name: "Sewer Scopes", url: `${baseUrl}/sewer-scopes`, slug: "sewer-scopes" },
-//     { name: "Termite Inspections", url: `${baseUrl}/termites-cost-billions`, slug: "termites-cost-billions" },
-//     { name: "Contact", url: `${baseUrl}/contact`, slug: "contact" }
-//   ];
-  
-
-//   const currentSlug = window.currentPageSlug;
-//   if (!currentSlug) return;
-
-//   const currentIndex = pages.findIndex(p => p.slug === currentSlug);
-//   if (currentIndex === -1) return;
-
-//   // Next page setup
-//   if (currentIndex < pages.length - 1) {
-//     const nextPage = pages[currentIndex + 1];
-//     nextPageNameSpan.textContent = nextPage.name;
-//     nextPageBtn.addEventListener("click", function () {
-//       window.location.href = nextPage.url;
-//     });
-//   } else {
-//     document.getElementById("nextBtnWrapper").style.display = "none";
-//   }
-
-//   // Previous page setup
-//   if (currentIndex > 0) {
-//     const prevPage = pages[currentIndex - 1];
-//     previousBtn.addEventListener("click", function () {
-//       window.location.href = prevPage.url;
-//     });
-//   } else {
-//     previousBtn.style.display = "none";
-//   }
-// });
-
 // Time Picker 
 const timeDisplay = document.getElementById("inspectionTimeDisplay");
 const timePanel = document.getElementById("timePickerPanel");
@@ -474,6 +436,8 @@ function submitTime() {
   timeDisplay.value = timeString;
   hiddenInput.value = timeString;
   timePanel.style.display = "none";
+
+  // ✅ Remove red border if time is now selected
   timeDisplay.classList.remove("is-invalid");
 }
 
@@ -531,22 +495,31 @@ nextBtn.addEventListener("click", () => {
 });
 
 
-// remove the red color after selection time 
 
-function submitTime() {
-  const hour = hourInput.value.padStart(2, '0');
-  const minute = minuteInput.value.padStart(2, '0');
-  const timeString = `${hour}:${minute} ${amPm}`;
-  timeDisplay.value = timeString;
-  hiddenInput.value = timeString;
-  timePanel.style.display = "none";
 
-  // ✅ Remove red border if time is now selected
-  timeDisplay.classList.remove("is-invalid");
+// Minutes and hours numbers limitations
+  
+const hour_Input = document.getElementById("hour");
+const minute_Input = document.getElementById("minute");
+
+function enforceTwoDigits(input) {
+  input.addEventListener("input", () => {
+    if (input.value.length > 2) {
+      input.value = input.value.slice(0, 2);
+    }
+  });
 }
 
+enforceTwoDigits(hour_Input);
+enforceTwoDigits(minute_Input);
 
 
+
+/**
+ * 
+ * Footer Location Expend JavaScript 
+ * 
+ */
 
 const fullText = `St. Louis City • St. Louis County • Spanish Lake • Florissant • Hazelwood • St. Charles City • St. Charles County • Valley Park • Wildwood • Bridgeton • O’Fallon • St. Peters • Lake St. Louis • Harvester • Maryland Heights • Overland • University City • Chesterfield • Arnold • Pacific • Ballwin • Eureka • Maplewood • Kirkwood • Webster Groves • Rock Hill • Brentwood • Town and Country • Des Peres • Clayton • Creve Coeur • Manchester • Shrewsbury • Fenton • Ladue • Richmond Heights • High Ridge • South County • Jefferson County (Imperial, Hillsboro, Barnhart) • Crestwood • Sunset Hills • Wentzville • Cottleville • Glencoe • Tesson Ferry`;
 

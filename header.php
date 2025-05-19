@@ -34,7 +34,7 @@
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'stl'); ?></a>
     <header id="stickyHeader" class="container-fluid bg-white stickyHeader">
       <!-- Top Navbar -->
-      <nav class=" p-2 border-bottom bg-white  px-lg-4" >
+      <nav class=" p-2 border-bottom bg-white  px-lg-4" style="font-size: 1.1rem;font-weight: 600;">
         <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class="contact-number d-flex flex-column flex-md-row align-items-md-center">
          <a href="mailto:office@stlhomeinspector.com" class="text-dark me-md-3 text-decoration-none">

@@ -61,7 +61,7 @@ get_header();
             <i class="fas fa-shield-heart fa-2x text-danger"></i>
           </div>
           <h5 class="fw-bold">FREE 200% GUARANTEE</h5>
-          <p>If you're not satisfied, get a full refund & a new inspector.</p>
+          <p>If you are not satisfied with my service, I will return your fee and pay for the new inspector.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up">
@@ -70,7 +70,7 @@ get_header();
             <i class="fas fa-clock-rotate-left fa-2x text-danger"></i>
           </div>
           <h5 class="fw-bold">Need Quick Turnaround?</h5>
-          <p>I'll rearrange my schedule to accommodate urgent inspections.</p>
+          <p>If I'm fully booked on the day you need, I'll do my best to rearrange my schedule to accommodate you.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up">
@@ -79,7 +79,7 @@ get_header();
             <i class="fas fa-handshake fa-2x text-danger"></i>
           </div>
           <h5 class="fw-bold">Free Buyer Protection Plan</h5>
-          <p>Get a discounted second inspection if you don't purchase the first home.</p>
+          <p>If you choose not to purchase the first home, your second inspection will be offered at a discounted rate.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up">
@@ -88,7 +88,7 @@ get_header();
             <i class="fas fa-layer-group fa-2x text-danger"></i>
           </div>
           <h5 class="fw-bold">Covering All Bases</h5>
-          <p>Radon, Mold, Sewer, Termite, and Gas Safety inspections available.</p>
+          <p>For an additional fee, we offer Radon, Sewer, Termite, Gas Safety, and Mold Sampling services, with thermal imaging included at no extra charge!</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up">
@@ -97,7 +97,7 @@ get_header();
             <i class="fas fa-infinity fa-2x text-danger"></i>
           </div>
           <h5 class="fw-bold">Service Never Ends</h5>
-          <p>Lifetime assistance for your home inspection questions.</p>
+          <p>Have questions about your home? We're here to assist you for life.</p>
         </div>
       </div>
       <div class="col-md-4" data-aos="fade-up">
@@ -106,7 +106,7 @@ get_header();
             <i class="fas fa-file-alt fa-2x text-danger"></i>
           </div>
           <h5 class="fw-bold">Next-Day Reports</h5>
-          <p>Reports delivered the next business day, including Gas Safety & Radon tests.</p>
+          <p>Reports delivered next business day. Gas Safety and Radon test delivered in 2 days.</p>
         </div>
       </div>
     </div>
@@ -402,15 +402,15 @@ get_header();
   <input type="hidden" id="inspectionTime" name="inspectionTime">
 
     <!-- Time Picker Panel (Initially Hidden) -->
-  <div class="time-container border rounded p-3 mt-2 bg-light" id="timePickerPanel" style="opacity: 1;display: block;top: 390px;left: 853.828px;">
+  <div class="time-container border rounded p-3 mt-2 bg-light" id="timePickerPanel" style="display: none;">
     <div class="time-label">Enter Time</div>
     <div class="time-boxes d-flex gap-3 mb-3">
       <div class="time-box">
-        <input type="number" id="hour" class="form-control" min="1" max="12" value="7">
+        <input type="number" id="hour" class="form-control" min="1" max="12" value="7" maxlength="2">
         <div class="time-label-text text-center small mt-1 d-flex">Hour</div>
       </div>
       <div class="time-box">
-        <input type="number" id="minute" class="form-control" min="0" max="59" step="1" value="15">
+        <input type="number" id="minute" class="form-control" min="0" max="59" step="1" value="15" maxlength="2">
         <div class="time-label-text text-center small mt-1 d-flex">Minute</div>
       </div>
       <div class="time-box">

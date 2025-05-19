@@ -152,22 +152,26 @@
     <!-- Copyright -->
     <div class="py-4" style="background-color: #000000;">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <p class="text-gray small mb-0" style="color: #6c757d;">© 2025 STL Home Inspection Services LLC. All Rights Reserved.</p>
-          </div>
-          <div class="col-md-6">
-            <div class="d-flex align-items-center justify-content-md-end justify-content-center">
-              <div class="d-flex align-items-center">
-                <img src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/iraq-badge.png" alt="US Air Force" class=" emblem">
-                <div class="d-flex flex-column">
-                  <span class="text-white small fw-bold">US AIR FORCE</span>
-                  <span class="text-danger small" style="color: #bb0a24;">RETIRED</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="row align-items-center">
+  <!-- Text column, shown second on smaller screens -->
+  <div class="col-md-6 mb-4 mb-md-0 order-2 order-md-1 text-center text-md-start " style="margin-top: 2.5rem !important;">
+    <p class="text-gray small mb-0" style="color: #6c757d;">
+      © 2025 STL Home Inspection Services LLC. All Rights Reserved.
+    </p>
+  </div>
+
+  <!-- Images column, shown first on smaller screens -->
+  <div class="col-md-6 order-1 order-md-2">
+    <div class="d-flex align-items-center justify-content-md-end justify-content-center">
+      <div class="d-flex align-items-center">
+        <img src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/eagle.jpg" alt="US Air Force" class="emblem">
+        <img src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/iraq-badge.png" alt="US Air Force" class="emblem">
+        <img src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/airforce-retired.svg" alt="US Air Force" class="emblem">
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
   </footer>
