@@ -27,16 +27,17 @@
                 </div>
                 <div class="contact-info">
                   <div class="label">Phone Number</div>
-                  <div class="value">314 805 2137</div>
+                  <div class="value">NW OK 580 707 4204</div>
+                   <div class="value">OKC 405 463 1738</div>
                 </div>
               </a>
-              <a href="mailto:office@stlhomeinspector.com" class="footer-contact-item">
+              <a href="mailto:office@oklahomahomeinspector.com" class="footer-contact-item">
                 <div class="icon-wrapper">
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div class="contact-info">
                   <div class="label">Email Address</div>
-                  <div class="value">office@stlhomeinspector.com</div>
+                  <div class="value">office@oklahomahomeinspector.com</div>
                 </div>
               </a>
             </div>
@@ -50,10 +51,12 @@
                 <div class="icon-wrapper">
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <div class="contact-info">
-                  <div class="label">Office Location</div>
-                  <div class="value">1204 Briarwood Drive</div>
-                  <div class="value">Bethalto IL, 62010</div>
+<div class="contact-info">
+                  <div class="label">Home Base </div>
+                  <div class="value">5301 Ritchie Ave </div>
+                  <div class="value">Enid, OK 73701
+
+</div>
                 </div>
               </div>
               <div class="footer-contact-item">
@@ -78,15 +81,11 @@
                 <span class="association-label">NACHI:</span>
                 <span class="association-value">Profile</span>
               </a>
-              <a href="https://www.homeinspector.org/HomeInspectors/Find/Details/18885GD/Clayton/MO/STL-Home-Inspection-Services" class="association-link" target="_blank">
-                <span class="association-label">ASHI:</span>
-                <span class="association-value">Profile</span>
-              </a>
               <a href="https://certifiedmasterinspector.org/verify/billy-boerner-776" class="association-link" target="_blank">
                 <span class="association-label">CMI:</span>
                 <span class="association-value">Profile</span>
               </a>
-              <a href="<?php echo esc_url(home_url('/contact')); ?>" class="association-link" target="_blank">
+              <a href="<?php echo esc_url(home_url('/mold-sampling')); ?>" class="association-link" target="_blank">
                 <span class="association-label">IAC2:</span>
                 <span class="association-value">Certificate</span>
               </a>
@@ -94,14 +93,8 @@
           </div>
 
           <!-- What to Expect -->
-          <div class="col-12 col-md-6 col-lg-3 footer-column">
-            <h5 class="text-uppercase fs-6 text-white mb-4 footer-title heading-footer">What to Expect</h5>
-            <div class=" gap-2 footer-links">
-              <a href="#" class="text-white text-decoration-none hover-danger">Steps</a>
-              <a href="https://www.nachi.org/sop.htm" class="text-white text-decoration-none hover-danger">SOP</a>
-              <a href="#" class="text-white text-decoration-none hover-danger">Contract</a>
-            </div>
-            <div class="mt-4 d-flex ml-1 justify-content-center">
+          <div class="col-12 col-md-6 col-lg-3 footer-column justify-content-center">
+            <div class="social-icons-container d-flex ml-1 justify-content-left ">
               <div class="d-flex gap-3 social-icons">
                 <a href="https://www.facebook.com/stlhiservicesfb" class="social-icon-link" target="_blank">
                   <div class="social-icon-wrapper">
@@ -118,6 +111,11 @@
                     <i class="fab fa-yelp"></i>
                   </div>
                 </a>
+                <a href="https://www.yelp.com/biz/stl-home-inspection-services-clayton?osq=home+inspectors&override_cta=Request+a+Quote" class="social-icon-link" target="_blank">
+                  <div class="social-icon-wrapper">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -128,7 +126,7 @@
     <!-- Service Areas -->
     <div class="py-4" style="background-color: #000000;">
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center service-coverage">
           <div class="col-12">
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
               <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
@@ -136,12 +134,11 @@
                 <h6 class="text-white mb-0 fs-6">Service Coverage</h6>
               </div>
 <div class="service-areas-wrapper">
-  <div class="locations-text" id="locationsText">
-    St. Louis City • St. Louis County • Spanish Lake • Florissant • Hazelwood • St. Charles City • St. Charles County • Valley Park • Wildwood • Bridgeton • O’Fallon • St. Peters • Lake St. Louis • Harvester • Maryland Heights • Overland • University City • Chesterfield • Arnold • Pacific • Ballwin • Eureka • Maplewood • Kirkwood • Webster Groves • Rock Hill • Brentwood • Town and Country • Des Peres • Clayton • Creve Coeur • Manchester • Shrewsbury • Fenton • Ladue • Richmond Heights • High Ridge • South County • Jefferson County (Imperial, Hillsboro, Barnhart) • Crestwood • Sunset Hills • Wentzville • Cottleville • Glencoe • Tesson Ferry
+  <div class="locations-text" id="locationsText">Enid • North Enid • Breckinridge • Kremlin • Garber • Waukomis • Pond Creek • Lahoma • Drummond • Lamont • Goltry • Medford • Cherokee • Kingfisher • Guthrie • Perry • Edmond • Oklahoma City • Yukon • Ponca City • Stillwater • Fairview • Alva • Hennessy • Okarche
   </div>
-  <div class="toggle-container">
+  <!-- <div class="toggle-container">
     <button class="toggle-btn" onclick="toggleLocations()" id="toggleButton">View All Locations</button>
-  </div>
+  </div> -->
 </div>
             </div>
           </div>
@@ -156,7 +153,7 @@
   <!-- Text column, shown second on smaller screens -->
   <div class="col-md-6 mb-4 mb-md-0 order-2 order-md-1 text-center text-md-start " style="margin-top: 2.5rem !important;">
     <p class="text-gray small mb-0" style="color: #6c757d;">
-      © 2025 STL Home Inspection Services LLC. All Rights Reserved.
+      © 2025 Oklahoma Home Inspection & Pest Control. All Rights Reserved.
     </p>
   </div>
 
@@ -164,9 +161,9 @@
   <div class="col-md-6 order-1 order-md-2">
     <div class="d-flex align-items-center justify-content-md-end justify-content-center">
       <div class="d-flex align-items-center">
-        <img src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/eagle.jpg" alt="US Air Force" class="emblem">
-        <img src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/iraq-badge.png" alt="US Air Force" class="emblem">
-        <img src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/airforce-retired.svg" alt="US Air Force" class="emblem">
+        <img src="<?php echo get_template_directory_uri(); ?>/src/eagle.jpg" alt="US Air Force" class="emblem">
+        <img src="<?php echo get_template_directory_uri(); ?>/src/iraq-badge.png" alt="US Air Force" class="emblem">
+        <img src="<?php echo get_template_directory_uri(); ?>/src/airforce-logo.svg" alt="US Air Force" class=" airforce-logo">
       </div>
     </div>
   </div>
@@ -182,6 +179,38 @@
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+
+/**
+ * Footer Location Expand JavaScript
+ * Refactored for robustness: DOMContentLoaded, element checks, no redeclaration, safe for all pages
+ */
+// document.addEventListener('DOMContentLoaded', function() {
+//   const fullText = `St. Louis City • St. Louis County • Spanish Lake • Florissant • Hazelwood • St. Charles City • St. Charles County • Valley Park • Wildwood • Bridgeton • O’Fallon • St. Peters • Lake St. Louis • Harvester • Maryland Heights • Overland • University City • Chesterfield • Arnold • Pacific • Ballwin • Eureka • Maplewood • Kirkwood • Webster Groves • Rock Hill • Brentwood • Town and Country • Des Peres • Clayton • Creve Coeur • Manchester • Shrewsbury • Fenton • Ladue • Richmond Heights • High Ridge • South County • Jefferson County (Imperial, Hillsboro, Barnhart) • Crestwood • Sunset Hills • Wentzville • Cottleville • Glencoe • Tesson Ferry`;
+//   const shortText = fullText.slice(0, 192);
+//   const textElement = document.getElementById('locationsText');
+//   const button = document.getElementById('toggleButton');
+//   let isExpanded = false;
+
+//   if (textElement && button) {
+//     // Set default shortened text
+//     textElement.textContent = shortText;
+//     textElement.classList.add('truncated');
+
+//     button.addEventListener('click', function() {
+//       if (isExpanded) {
+//         textElement.textContent = shortText;
+//         textElement.classList.add('truncated');
+//         button.textContent = 'View All Locations';
+//       } else {
+//         textElement.textContent = fullText;
+//         textElement.classList.remove('truncated');
+//         button.textContent = 'Show Less';
+//       }
+//       isExpanded = !isExpanded;
+//     });
+//   }
+// });
+
 	AOS.init({
 		duration: 800,
 		once: true,

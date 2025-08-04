@@ -131,6 +131,7 @@ function stl_custom_inline_styles() {
 	</style>';
 }
 add_action( 'wp_head', 'stl_custom_inline_styles' );
+remove_action('wp_head', 'wp_site_icon', 99);
 
 
 // Javascript Time Picker 
@@ -142,6 +143,6 @@ function enqueue_flatpickr_assets() {
     wp_enqueue_script('flatpickr-js', 'https://cdn.jsdelivr.net/npm/flatpickr', [], null, true);
 
     // Custom JS for initialization
-    wp_enqueue_script('custom-flatpickr-init', get_template_directory_uri() . '/js/flatpickr-init.js', ['flatpickr-js'], null, true);
+    // wp_enqueue_script('custom-flatpickr-init', get_template_directory_uri() . '/js/flatpickr-init.js', ['flatpickr-js'], null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_flatpickr_assets');

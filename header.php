@@ -24,6 +24,9 @@
 
   <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/src/tornado-icon.png" type="image/png">
+
   <?php wp_head(); ?>
 </head>
 
@@ -34,20 +37,21 @@
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'stl'); ?></a>
     <header id="stickyHeader" class="container-fluid bg-white stickyHeader">
       <!-- Top Navbar -->
-      <nav class=" p-2 border-bottom bg-white  px-lg-4" style="font-size: 1.1rem;font-weight: 600;">
+      <nav class="d-none d-md-block p-2 border-bottom bg-white  px-lg-4 hide-below-930" style="font-size: 1.1rem; font-weight: 600;">
         <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class="contact-number d-flex flex-column flex-md-row align-items-md-center">
-         <a href="mailto:office@stlhomeinspector.com" class="text-dark me-md-3 text-decoration-none">
-            <i class="fas fa-envelope"></i> office@stlhomeinspector.com
+         <a href="mailto:office@oklahomahomeinspector.com" class="text-dark me-md-3 text-decoration-none">
+            <i class="fas fa-envelope"></i> office@oklahomahomeinspector.com
           </a>
-          <a href="tel:3148052137" class="text-dark text-decoration-none">
-           <i class="fas fa-phone"></i> 314 805 2137
-              </a>
+               <i class="fas fa-phone"></i>
+               <div class="value " style="margin-right:20px">NW OK 580 707 4204</div>
+               <div class="value">OKC 405 463 1738</div>
           </div>
-          <div class="social-link d-flex">
+          <div class="social-link  d-flex" style="margin-right: 3.5rem;">
             <a href="https://www.facebook.com/stlhiservicesfb" class="text-dark mx-2" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://www.google.com/localservices/prolist?g2lbs=AP8S6EObpcPA_hbSzsjxH37OWxsMGYN5XaH697HYoMNwMEyTVhU_uyh7qv8aHP68FjcsjmBg3TnHRfHAbjqUm72GXQdSWO61IfXJvFJ0_HT0OFtueJdbPvg%3D&hl=en-US&gl=us&ssta=1&q=st%20louis%20home%20inspectors&oq=st%20louis%20home%20inspectors&slp=MgA6HENoTUlrWUNPbnBtRGdBTVYyaFN6QUIwcjhBRkVSAggCYAB6owJDaGh6ZENCc2IzVnBjeUJvYjIxbElHbHVjM0JsWTNSdmNuTkluSm1kZ2V1Q2dJQUlXaVlRQWhBREdBQVlBUmdDR0FNaUdITjBJR3h2ZFdseklHaHZiV1VnYVc1emNHVmpkRzl5YzNvSlUzUXVJRXh2ZFdsemtnRU9hRzl0WlY5cGJuTndaV04wYjNLcUFXd0tDUzl0THpBeGJEQnRkd29KTDIwdk1ESmtNWG80RUFFcUV5SVBhRzl0WlNCcGJuTndaV04wYjNKektBQXlIeEFCSWhzRUpfTEk2ZFN6a0oteVpIS3dxdEh5cTlPb3NPeGhrVXFVaER3eUhCQUNJaGh6ZENCc2IzVnBjeUJvYjIxbElHbHVjM0JsWTNSdmNuUGdBUUGSAbICCgwvZy8xMnZzMmdtNHgKDS9nLzExYmJ0NTh0eGwKDS9nLzExbV9wX3RuM2sKDS9nLzExZjl3Nng5Y24KDS9nLzExZmhxaGszdzgKDS9nLzExZHhrNXdfamIKDS9nLzExZmQ3Nm0xMGoKCy9nLzF2N3B6MDN2CgwvZy8xcHAydGp3a2gKDS9nLzExcDl3YnFreDMKDC9nLzEyaHQzbTA4ZwoML2cvMXlnamRiOTI1Cg0vZy8xMWJ0X2o5YzJxCg0vZy8xMWR6ZGg4YjNkCg0vZy8xMWJ3aDV2YnF2Cg0vZy8xMWY2bmg1NTA1Cg0vZy8xMWdjbXdiNV94Cg0vZy8xMWR6MmczNDgzCg0vZy8xMWdoczF0Nm5qCg0vZy8xMWNra3N3d2QwEgQSAggBEgQKAggB&src=2&spp=CgwvZy8xMnZzMmdtNHg65AFXaVlRQWhBREdBQVlBUmdDR0FNaUdITjBJR3h2ZFdseklHaHZiV1VnYVc1emNHVmpkRzl5YzVJQkRtaHZiV1ZmYVc1emNHVmpkRzl5bWdFQXFnRnNDZ2t2YlM4d01Xd3diWGNLQ1M5dEx6QXlaREY2T0JBQktoTWlEMmh2YldVZ2FXNXpjR1ZqZEc5eWN5Z0FNaDhRQVNJYkJDZnl5T25VczVDZnNtUnlzS3JSOHF2VHFMRHNZWkZLbElROE1od1FBaUlZYzNRZ2JHOTFhWE1nYUc5dFpTQnBibk53WldOMGIzSno%3D&lrlstt=1688959715855&ved=2ahUKEwj-tvudmYOAAxXLhIkEHbmmD6UQvS56BAgSEAE&scp=ChNnY2lkOmhvbWVfaW5zcGVjdG9yEjsSEgn5ju36qbTYhxFb4Lsiyuo5viINU3QuIExvdWlzLCBNTyoUDXd-9xYV4i4qyh0CfxwXJaayQcowABoPaG9tZSBpbnNwZWN0b3JzIhhzdCBsb3VpcyBob21lIGluc3BlY3RvcnMqDkhvbWUgaW5zcGVjdG9yOkgKDS9nLzExcnRxNzQwenoSG2pvYl90eXBlX2lkOmhvbWVfaW5zcGVjdGlvbhoPSG9tZSBpbnNwZWN0aW9uIgJlbjACPc6qbz8%3D#ts=1" class="text-dark mx-2" target="_blank" ><i class="fab fa-google"></i></a>
             <a href="https://www.yelp.com/biz/stl-home-inspection-services-clayton?osq=home+inspectors&override_cta=Request+a+Quote" class="text-dark mx-2" target="_blank"><i class="fab fa-yelp"></i></a>
+            <a href="https://www.yelp.com/biz/stl-home-inspection-services-clayton?osq=home+inspectors&override_cta=Request+a+Quote" class="text-dark mx-2" target="_blank"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
       </nav>
@@ -58,9 +62,7 @@
             <!-- Visible only on small to medium (mobile/tablet) screens -->
             <div class="d-lg-none d-flex align-items-center justify-content-between w-100  p-2">
               <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
-                <img class="logo"
-                  src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/header-logo.svg"
-                  alt="STL Home Inspection" height="60" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="STL Home Inspection Logo" style="height:60px;">
               </a>
               <button class="navbar-toggler border-0 " type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,9 +72,7 @@
 
             <!-- Visible on large screens and up -->
             <a class="navbar-brand d-none d-lg-block" href="<?php echo esc_url(home_url('/')); ?>">
-              <img class="logo"
-                src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/header-logo.svg"
-                alt="STL Home Inspection" height="60" />
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="STL Home Inspection Logo" style="height:70px;">
             </a>
           <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
@@ -146,20 +146,13 @@
             </ul>
           </div>
           <!-- Navbar Button -->
-            <button style=" border: none; background: none; ">
-                      <a href="/stl/#schedule-inspection" class="custom-btn-hover btn btn-danger d-none d-lg-inline-block typography-heading ">
-            New Inspection
-          </a>
-           </button>
+<a href="<?php echo home_url(); ?>/#schedule-inspection" class="btn custom-btn-hover d-none d-lg-inline-block typography-heading">
+  Schedule Inspection
+</a>
 
         </div>
       </nav>
     </header>
-
-
-
-
-
 
 
 
