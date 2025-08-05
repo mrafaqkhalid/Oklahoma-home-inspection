@@ -22,12 +22,12 @@
           <div class="d-flex justify-content-center flex-wrap gap-3 my-2">
             <span class="badge typography-small text-white" style="background-color: rgb(34, 37, 41);">InterNACHI</span>
             <span class="badge typography-small text-black" style="background-color: #bebebe;">ASHI</span>
-            <span class="badge typography-small text-white" style="background-color: #bb0a24;">Master Certified</span>
+            <span class="badge typography-small text-white" style="background-color: #e32f2c;">Master Certified</span>
           </div>
 
           <!-- Inspector Bio -->
           <p class="text-muted typography-small mt-2">
-            <b> STL Home Inspection Services</b> was founded in 2008 during my time in the U.S. military, fueled by a long-standing passion for construction that began while I was leading renovation projects. Over the years, I have had the privilege of inspecting thousands of homes and commercial properties throughout St. Louis and the surrounding areas, helping clients avoid costly financial mistakes. As your dedicated home inspector, I hold certifications from InterNACHI (International Association of Certified Home Inspectors) and am a proud member of ASHI (American Society of Home Inspectors) and IAC2 (International Association of Certified Indoor Air Consultants). Your best interests are my utmost priority.
+            <b>Oklahoma Home Inspecton & Pest Control</b> was founded in 2008 during my time in the U.S. military, fueled by a long-standing passion for construction that began while I was leading renovation projects. Over the years, I have had the privilege of inspecting thousands of homes and commercial properties throughout St. Louis and the surrounding areas, helping clients avoid costly financial mistakes. As your dedicated home inspector, I hold certifications from InterNACHI (International Association of Certified Home Inspectors) and am a proud member of ASHI (American Society of Home Inspectors) and IAC2 (International Association of Certified Indoor Air Consultants). Your best interests are my utmost priority.
           </p>
         </div>
       </div>

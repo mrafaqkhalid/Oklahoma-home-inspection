@@ -66,7 +66,7 @@
     <h3 class="fw-bold text-uppercase">FREE (No Charge)</h3>
     <p class="lead">Roof or Chimney too tall? We can drone it.</p>
     <p><i class="fas fa-thermometer-half me-1 text-danger"></i>Thermal Imaging: <em>We See What Others Can't.</em></p>
-    <a href="/stl/#schedule-inspection" class="btn  mt-3 custom-btn-hover">
+      <a href="<?php echo home_url(); ?>/#schedule-inspection" class="btn  mt-3 custom-btn-hover">
   <i class="fas fa-calendar-check me-2"></i>Book Inspections
 </a>
 

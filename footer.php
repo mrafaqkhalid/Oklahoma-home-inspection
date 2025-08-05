@@ -158,7 +158,7 @@
   </div>
 
   <!-- Images column, shown first on smaller screens -->
-  <!-- <div class="col-md-6 order-1 order-md-2">
+  <div class="col-md-6 order-1 order-md-2">
     <div class="d-flex align-items-center justify-content-md-end justify-content-center">
       <div class="d-flex align-items-center">
         <img src="<?php echo get_template_directory_uri(); ?>/src/eagle.jpg" alt="US Air Force" class="emblem">
@@ -166,7 +166,7 @@
         <img src="<?php echo get_template_directory_uri(); ?>/src/airforce-logo.svg" alt="US Air Force" class=" airforce-logo">
       </div>
     </div>
-  </div> -->
+  </div>
 </div>
 
       </div>

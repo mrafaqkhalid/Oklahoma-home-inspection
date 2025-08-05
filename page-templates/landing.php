@@ -12,27 +12,24 @@ get_header();
 
 <!-- Hero Section -->
 <section  id="section1"   class="hero position-relative d-flex text-white shadow-light-dark align-items-center">
-  <div class="container-fluid px-5">
-    <div class="row align-items-center">
+  <div class="container-fluid px-5 remove-padding-sm">
+    <div class="row align-items-center hero-wraper" >
       <!-- Left Content -->
-      <div class="col-lg-6 text-center text-lg-start">
-        <h1 class="fw-bold display-3">
+      <div class="left-side-content col-lg-6 text-center text-lg-start">
+        <h1 class="fw-bold banner-heading">
           Master Certified <br> Thousands Inspected <br> Since
-          <span style="color: #bb0a24;">2008</span>
-          <!-- <img src="<?php echo get_template_directory_uri(); ?>/src/airforce-retired.svg" -->
-          <img src="https://stlhomeinspector.com/wp-content/themes/stlhomeinspector/images/airforce-retired.svg"
-            alt="Air Force Logo" class="airforce-logo ms-2">
+          <span style="color: #e32f2c;">2008</span>
+          <img src="<?php echo get_template_directory_uri(); ?>/src/airforce-logo.svg" alt="US Air Force" class="airforce-logo ms-2">
         </h1>
 
         <!-- Text with Left Sidebar -->
-        <p class="lead with-sidebar">
+        <p class="lead with-sidebar mt-lg-3">
           <span class="sidebar"></span>
-          <span style="color: rgb(255, 69, 0);"> Highly Trained &amp; Observant:</span> Your Best Choice for Home
-          Inspections
+          <span style="color: rgb(255 196 193 / 91%);"> Highly Trained &amp; Observant:</span> Your Best Choice For Home Inspections and Pest Control Solutions
         </p>
 
         <!-- CTA Button (Only on MD & SM screens) -->
-         <a href="#schedule-inspection"><button class="btn-danger d-lg-none my-5 typography-heading hero-button">New Inspection</button></a>
+         <a href="#schedule-inspection"><button class="btn-danger d-lg-none my-5 typography-heading hero-button">Schedule Inspection</button></a>
       </div>
 
       <!-- Right Side Video -->
@@ -114,12 +111,12 @@ get_header();
 </section>
 
 <!-- Thank you for serving us -->
-<section  id="section3"  class="thank-you-section text-white " style="background: linear-gradient(to right, #bb0a24, #151515);">
+<section  id="section3"  class="thank-you-section text-white " style="background: linear-gradient(to right, #e32f2c, #151515);">
   <div class="container-fluid">
     <div class="row ">
       <!-- Left: Content -->
       <div class="col-lg-6 data-aos="fade-right">
-       <div class="content-wrap p-5">
+       <div class="content-wrap p-5 text-center">
        <h2 class="typography-heading mb-3">
           <?php echo esc_html(get_theme_mod('thank_you_title', 'Exclusive Discounts for First Responders')); ?>
         </h2>
@@ -127,7 +124,7 @@ get_header();
           <?php echo esc_html(get_theme_mod('thank_you_subtitle', 'We salute your service to our community')); ?>
         </p>
 
-        <ul class="list-unstyled typography-body">
+        <ul class="list-unstyled typography-body d-flex flex-column justify-center align-items-center">
           <li class="mb-3 d-flex align-items-center">
             <i class="fas fa-fire-extinguisher me-3 fs-4 text-white"></i> Firefighters
           </li>
@@ -145,13 +142,13 @@ get_header();
       </div>
 
       <!-- Right: Tribute Image or Illustration -->
-      <div class="col-lg-6 text-center" data-aos="fade-left">
+      <div class="col-lg-6" data-aos="fade-left">
         <div class="bg-black bg-afaq p-4 rounded shadow">
-          <div class="flex-content">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/src/superman.png" alt="Thank You Image"
+          <div class="flex-content" style="text-align: center;">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/src/spider.jpeg" alt="spider image"
               class="img-fluid mb-3" style="max-height: 250px;">
-            <h3 class="typography-heading">Thank You For Serving</h3>
-            <p class="typography-small text-secondary">Your courage and commitment never go unnoticed.</p>
+            <h3 class="typography-heading capitalize" style="text-transform:capitalize">Let us get them before they get you</h3>
+            
           </div>
         </div>
       </div>
@@ -161,12 +158,12 @@ get_header();
 
 <!-- Home Animation & Header -->
 <section  id="section4" class="inspector-header primary-color" data-aos="fade-down">
-  <div class="container text-center">
-    <h1 class="main-title">ST. LOUIS HOME INSPECTOR</h1>
-    <div class="divider"></div>
+  <div class="container text-center pt-4 mt-4">
+    <h1 class="main-title">Oklahoma Home Inspector</h1>
+    <div class="divider mb-4"></div>
     <p class="intro-text" data-aos="fade-up">
       <?php
-      $intro_text = get_theme_mod('inspector_intro_text', 'As a <strong>Certified Master Inspector®</strong> and proud member of InterNACHI and ASHI, I bring extensive knowledge and experience to every inspection. With certifications from InterNACHI and as an IAC2 (Indoor Air Consultant), I have a <strong>unique set of skills</strong> to identify issues others might miss. My goal is to protect your investment and ensure your family\'s safety.<br><br>Specializing in <strong>single-family homes</strong>, <strong>multi-family properties</strong>, <strong>light commercial buildings</strong>, <strong>historical homes</strong>, and <strong>condominiums</strong>, STL Home Inspection Services provides thorough, accurate inspections for your peace of mind.');
+      $intro_text = get_theme_mod('inspector_intro_text', 'As a <strong>Certified Master Inspector®</strong> and proud member of InterNACHI and ASHI, I bring extensive knowledge and experience to every inspection. With certifications from InterNACHI and as an IAC2 (Indoor Air Consultant), I have a <strong>unique set of skills</strong> to identify issues others might miss. My goal is to protect your investment and ensure your family\'s safety.<br><br>Specializing in <strong>single-family homes</strong>, <strong>multi-family properties</strong>, <strong>light commercial buildings</strong>, <strong>historical homes</strong>, and <strong>condominiums</strong>, Oklahoma Home Inspection provides thorough, accurate inspections and pest control solutions for your peace of mind.');
       echo wp_kses_post($intro_text);
       ?>
     </p>
@@ -176,7 +173,7 @@ get_header();
 <!-- Review Section -->
 <section  class="primary-color reviews-section">
   <div class="container text-center">
-    <h2 class="section-title" data-aos="zoom-in">WHY CLIENTS TRUST STL HOME INSPECTION SERVICES</h2>
+    <h2 class="section-title uppercase" data-aos="zoom-in">WHY CLIENTS TRUST Oklahoma Home Inspection </br> & Pest Control Solutions</h2>
 
     <!-- Star Ratings -->
     <div class="ratings" data-aos="zoom-in-up">
@@ -196,8 +193,7 @@ get_header();
           seasoned professional with thousands of home inspections under my belt, I'm confident in the quality of my
           work. Many clients have avoided costly repairs thanks to my expertise. Don't just take my word for it—check
           out my top-rated Google reviews. On-site, my knowledge speaks for itself, backed by detailed reports and
-          excellent online feedback. I take pride in helping people, earning one of the highest ratings among St.
-          Louis home inspectors.</p>
+          excellent online feedback. I take pride in helping people, earning one of the highest ratings among Oklahoma home inspectors.</p>
       </div>
 
       <div class="review-box" data-aos="fade-left">
@@ -242,7 +238,7 @@ get_header();
       <!-- Residential Card -->
       <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
         <div class="p-4 rounded-4 shadow bg-white h-100 pricing-card position-relative">
-          <h5 class="typography-heading mb-4 fs-3" style="color: #bb0a24;">Residential Properties</h5>
+          <h5 class="typography-heading mb-4 fs-3" style="color: #e32f2c;">Residential Properties</h5>
           <ul class="list-unstyled typography-body text-dark fs-6">
             <li class="d-flex justify-content-between py-2 border-bottom">Up to 1K Sq Ft <span
                 class="fw-bold fs-5 text-dark">$389</span></li>
@@ -264,8 +260,7 @@ get_header();
                 class="fw-bold fs-5 text-dark">–$75</span></li>
             <li class="d-flex justify-content-between py-2 border-bottom">70+ Year House <span
                 class="fw-bold text-dark fs-5">+$50</span></li>
-            <li class="d-flex justify-content-between py-2">60+ Miles from Arch <span
-                class="fw-bold text-dark fs-5">+$50</span></li>
+
           </ul>
         </div>
       </div>
@@ -273,7 +268,7 @@ get_header();
       <!-- Ancillary Services -->
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
         <div class="p-4 rounded-4 shadow bg-white h-100 pricing-card">
-          <h5 class="typography-heading mb-4 fs-3" style="color: #bb0a24;">Ancillary Services</h5>
+          <h5 class="typography-heading mb-4 fs-3" style="color: #e32f2c;">Ancillary Services</h5>
           <ul class="list-unstyled typography-body text-dark fs-6">
             <li class="d-flex justify-content-between py-2 border-bottom">Radon Test <span
                 class="fw-bold fs-5 text-dark">$150</span></li>
@@ -283,7 +278,7 @@ get_header();
                 class="fw-bold fs-5 text-dark">$180</span></li>
             <li class="d-flex justify-content-between py-2 border-bottom">Termite <span
                 class="fw-bold fs-5 text-dark">$60</span></li>
-            <li class="d-flex justify-content-between py-2 border-bottom">Septic/Well <span class="fw-bold"><i
+            <li class="d-flex justify-content-between py-2 border-bottom">Septic/Well <span class=""><i
                   class="fas fa-phone text-dark"></i> Call Us</span></li>
             <li class="d-flex justify-content-between py-2">Mold Air Samples <span
                 class="fw-bold fs-5 text-dark">$289</span></li>
@@ -291,6 +286,11 @@ get_header();
           <p class="text-muted typography-small mt-3 fs-6">For 5k+ Sq Ft, commercial or multi please call.</p>
           <p class="text-muted typography-small mt-3 fs-6">💳 We accept Credit, debit, cash, check, bank transfer, Venmo
             or Cash App.</p>
+            <h3 class="mt-4"> Pest Control Solutions </h3>
+            <p>
+One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500 
+<br><br>
+<strong>We Treat For:</strong> Ants, Roaches, Spiders, Rodents, Fleas, Ticks, Mosquitos, and Wasps. </p>
         </div>
       </div>
 
@@ -298,7 +298,7 @@ get_header();
       <div class="col-lg-4" data-aos="fade-left" data-aos-delay="300">
         <div class="p-4 rounded-4 shadow bg-white h-100 d-flex flex-column justify-content-between pricing-card">
           <div>
-            <h5 class="typography-heading mb-4 fs-3" style="color: #bb0a24;">Schedule in 2 Minutes</h5>
+            <h5 class="typography-heading mb-4 fs-3" style="color: #e32f2c;">Schedule in 2 Minutes</h5>
             <ol class="ps-3 typography-body text-dark fs-6">
               <li class="mb-3"><strong>Choose</strong> Use the form below to choose your preferred date/time and desired
                 ancillaries.</li>
@@ -308,12 +308,16 @@ get_header();
               <li class="mb-3"><strong>Review</strong> A confirmation email will be sent the same day outlining all the
                 details.</li>
               <li><strong>We'll schedule</strong> with the listing agent on the Showing Time app.</li>
+             
             </ol>
           </div>
-
+<div class="mt-4">
+ <h4><strong>For Pest Control </strong></h4> <p>Dont use the form below, call to discuss the issue you are experiencing.  <div class="value " style="margin-right:20px">NW OK 580 707 4204</div>
+                   <div class="value">OKC 405 463 1738</div></p>
+                   </div>
           <!-- Optional visual or note for better balance -->
           <div class="mt-4 text-center text-muted small">
-            <i class="fas fa-calendar-check fs-2 text-danger " style="color: #bb0a24 !important;" ></i>
+            <i class="fas fa-calendar-check fs-2 text-danger " style="color: #e32f2c !important;" ></i>
             <p class="mt-2">Inspections are booked 7 days a week!</p>
           </div>
         </div>
@@ -323,9 +327,16 @@ get_header();
 </section>
 
 <!-- Schedule Inspection Section -->
-<section class="primary-color py-4" id="schedule-inspection">
+<section class="primary-color" id="schedule-inspection">
   <div class="container">
-    <!-- Step Indicator -->
+  
+
+    <!-- Section Title -->
+    <div class="text-center mb-4">
+      <h2 class="h3 fw-bold">Schedule Your Inspection</h2>
+      <p class="text-muted mb-0">Select your preferred date, time, and additional services</p>
+    </div>
+  <!-- Step Indicator -->
     <div class="steps mb-4">
       <div class="step-progress">
         <div class="step-progress-bar" style="width: 33.33%"></div>
@@ -345,13 +356,6 @@ get_header();
         </div>
       </div>
     </div>
-
-    <!-- Section Title -->
-    <div class="text-center mb-4">
-      <h2 class="h3 fw-bold">Schedule Your Inspection</h2>
-      <p class="text-muted mb-0">Select your preferred date, time, and additional services</p>
-    </div>
-
     <!-- Alert Banner -->
     <div class="alert custom-alert d-flex align-items-center mb-4">
       <div class="alert-icon me-3">
@@ -361,7 +365,7 @@ get_header();
         <h6 class="alert-heading mb-1">Quick Confirmation</h6>
         <p class="mb-0 small">
           Get confirmation in <strong>3 hours or less</strong>. Need urgent assistance?
-          <a href="tel:+13148052137" class="alert-link">Call or text (314) 805-2137</a>
+          <a href="tel:+13148052137" class="alert-link" style="color: black;">Call or text NW OK 580 707 4204, OKC 405 463 1738</a>
         </p>
       </div>
     </div>
@@ -430,11 +434,11 @@ get_header();
 </div>
 
             <div class="col-md-2 recommended-col">
-              <label class="form-label">Recommended</label>
+              <label class="form-label">Available Time Slots</label>
 
-              <div class="recommended-box">
-                <div><i class="fas fa-star text-warning "></i> 8:30 AM</div>
-                <div><i class="fas fa-star text-warning"></i> 1:00 PM</div>
+<div class="recommended-box">
+                <div> 10:00 AM</div>
+                <div> 2:30 PM</div>
               </div>
             </div>
           </div>
@@ -730,7 +734,7 @@ get_header();
 </section>
 
 
-<script>
+<!-- <script>
  const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
 
@@ -751,7 +755,6 @@ get_header();
 
     lastScrollTop = currentScroll;
   });
-</script>
+</script> -->
 
-<!-- Rest of the sections... -->
 <?php get_footer(); ?>

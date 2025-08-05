@@ -7,10 +7,10 @@
       <div class="col-lg-6" data-aos="fade-right">
         <h2 class="fw-bold text-dark mb-3">CLIENT CARE</h2>
         <p class="text-muted fs-6">
-          Have questions? We have answers! STL Home Inspection Services is here for you Monday to Saturday, 9 AM to 5 PM.
+          Have questions? We have answers! Oklahoma Home Inspector & Pest Control is here for you Monday to Saturday, 9 AM to 5 PM.
         </p>
         <p class="text-muted fs-6">
-          Call us at <strong>314 805 2137</strong> or use the form below to message us, and we'll respond within three hours or less!
+          Call us at <strong>NW OK 580 707 4204, OKC 405 463 1738</strong> or use the form below to message us, and we'll respond within three hours or less!
         </p>
       </div>
 

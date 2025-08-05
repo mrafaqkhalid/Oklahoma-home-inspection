@@ -43,7 +43,7 @@
           <li><strong class="text-danger">Peace of mind</strong> – know your home's plumbing system is safe and functioning.</li>
         </ul>
         <p class="text-muted" style="font-size: 0.95rem;">
-          By choosing <strong>STL Home Inspection Services</strong>, you'll work with professionals experienced in sewer inspections. We ensure the process is done thoroughly, and results are clear and reliable.
+          By choosing <strong>Oklahoma Home Inspection & Pest Control</strong>, you'll work with professionals experienced in sewer inspections. We ensure the process is done thoroughly, and results are clear and reliable.
         </p>
       </div>
     </div>
