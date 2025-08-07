@@ -32,10 +32,10 @@
                 </div>
               </a>
               <a href="mailto:office@oklahomahomeinspector.com" class="footer-contact-item">
-                <div class="icon-wrapper">
+                <div class="icon-wrapper" style="margin-left: 7px;">
                   <i class="fas fa-envelope"></i>
                 </div>
-                <div class="contact-info">
+                <div class="contact-info" style="margin-left: 0.5rem;">
                   <div class="label">Email Address</div>
                   <div class="value">office@oklahomahomeinspector.com</div>
                 </div>
@@ -94,6 +94,7 @@
 
           <!-- What to Expect -->
           <div class="col-12 col-md-6 col-lg-3 footer-column justify-content-center">
+            <h5 class="text-uppercase fs-6 mb-4 text-white" style="margin-left: 1rem;">     Join the Conversation</h5>
             <div class="social-icons-container d-flex ml-1 justify-content-left ">
               <div class="d-flex gap-3 social-icons">
                 <a href="https://www.facebook.com/stlhiservicesfb" class="social-icon-link" target="_blank">
@@ -131,7 +132,7 @@
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
               <div class="d-flex align-items-center gap-3 mb-3 mb-md-0">
                 <i class="fas fa-map-marker-alt text-danger fs-4"></i>
-                <h6 class="text-white mb-0 fs-6">Service Coverage</h6>
+                <h6 class="text-white mb-0 fs-6">Oklahoma Service Coverage</h6>
               </div>
 <div class="service-areas-wrapper">
   <div class="locations-text" id="locationsText">Enid • North Enid • Breckinridge • Kremlin • Garber • Waukomis • Pond Creek • Lahoma • Drummond • Lamont • Goltry • Medford • Cherokee • Kingfisher • Guthrie • Perry • Edmond • Oklahoma City • Yukon • Ponca City • Stillwater • Fairview • Alva • Hennessy • Okarche

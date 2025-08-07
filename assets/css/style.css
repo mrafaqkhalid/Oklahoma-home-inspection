@@ -1,8 +1,24 @@
-/*
-Theme Name: STL Theme
-Author: Your Name
-Version: 1.0
-Description: Custom theme converted from static HTML
+/*!
+Theme Name: Oklahoma Home Inspection & Pest Control
+Theme URI: http://oklahomahomeinspection.com/
+Author: Afaq Khalid
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: Oklahoma Home Inspection & Pest Control
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Oklahoma Home Inspection & Pest Control is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -95,6 +111,19 @@ Description: Custom theme converted from static HTML
 
 /* Next Button */
 /* Next Button */
+.btn:active,
+.btn.active,
+.btn:focus,
+.btn:focus-visible,
+.btn:visited,
+.btn:target,
+.btn:focus-within {
+  color: #ffffff !important;
+  background: #e32f2c !important;
+  border-color: #e32f2c !important;
+  box-shadow: none !important;
+}
+
 
 .btn {
   color: #ffffff;
@@ -169,6 +198,38 @@ Description: Custom theme converted from static HTML
 
 /* on click dropdown menu active  */
 /* top navbar */
+.custom-mx-responsive {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+@media (max-width: 1200px) {
+  .custom-mx-responsive {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .custom-mx-responsive {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-mx-responsive {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-mx-responsive {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
 
 .stickyHeader {
   position: fixed;
@@ -187,10 +248,6 @@ Description: Custom theme converted from static HTML
   transform: translateY(-100%);
 }
 
-/* Add padding to body to prevent content from hiding under fixed header */
-body {
-  padding-top: 0; /* Will be adjusted by JS */
-}
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
@@ -211,8 +268,8 @@ body {
   }
 }
 
-@media (max-width: 930px) {
-  .hide-below-930 {
+@media (max-width: 992px) {
+  .hide-below-992 {
     display: none !important;
   }
 }
@@ -237,11 +294,6 @@ body {
   background-color: transparent;
 }
 
-/* Light Gray Background on Scroll Down */
-.navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
 
 /* Top Navbar */
 
@@ -1096,11 +1148,17 @@ h3 {
   transform: scale(1.1);
   /* Slight zoom effect */
 }
+html, body {
+  overflow-x: hidden !important;
+}
+
 
 /* General Styling */
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  width: 100% !important;
+  padding-top: 0 !important; /* Will be adjusted by JS */
 }
 
 /* Header Section */

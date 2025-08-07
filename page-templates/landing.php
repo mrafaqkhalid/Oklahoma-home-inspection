@@ -35,13 +35,13 @@ get_header();
       <!-- Right Side Video -->
       <div class="col-lg-6 text-center">
         <div class="video-wrapper">
-          <iframe src="https://www.loom.com/embed/14a8b6e761f8436186f5797081e4795c?sid=1b89bf2b-d8cb-40fc-8513-86f7c34d0f16" 
-            title="Meet The Inspector"
-            frameborder="0" 
-            allowfullscreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-          </iframe>
-        </div>
+<iframe 
+  src="https://www.youtube.com/embed/mGaFnnscj0g" 
+  title="Meet The Inspector"
+  frameborder="0" 
+  allowfullscreen 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+</iframe>
       </div>
     </div>
   </div>
@@ -364,8 +364,8 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
       <div class="alert-content">
         <h6 class="alert-heading mb-1">Quick Confirmation</h6>
         <p class="mb-0 small">
-          Get confirmation in <strong>3 hours or less</strong>. Need urgent assistance?
-          <a href="tel:+13148052137" class="alert-link" style="color: black;">Call or text NW OK 580 707 4204, OKC 405 463 1738</a>
+          Get confirmation in <strong>3 hours or less.</strong>
+          For pest control please call us.
         </p>
       </div>
     </div>
