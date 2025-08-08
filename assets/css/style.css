@@ -1739,11 +1739,11 @@ input[type="date"].error {
 }
 
 /* Enhanced validation feedback for form controls */
-/* .form-control.is-invalid,
+.form-control.is-invalid,
 .form-select.is-invalid {
   border-color: #e32f2c !important;
   outline: none !important;
-} */
+}
 
 /* Time Select Grouping */
 optgroup {
@@ -2108,13 +2108,9 @@ text-area.form-select {
   box-shadow: none;
 }
 
-.input-group .input-group-text {
+.input-group .form-control:focus + .input-group-text {
   border-color: #e32f2c;
 }
-
-/* .input-group .form-control:focus + .input-group-text {
-  border-color: #e32f2c;
-} */
 
 /* Form Labels */
 
