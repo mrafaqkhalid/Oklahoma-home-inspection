@@ -665,7 +665,7 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
             <!-- Checkbox: No Realtor -->
 <div class="form-check mb-2">
   <input class="form-check-input" type="checkbox" id="noRealtorCheck" onchange="toggleRealtorField()">
-  <label class="form-check-label stretched-clickable" for="noRealtorCheck">
+  <label class="form-check-label stretched-clickable" for="noRealtorCheck" style="margin-left: 6px; padding-top: 1px;">
     No Realtor
   </label>
 </div>
@@ -782,6 +782,8 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
       realtorEmail.disabled = false;
       realtorPhone.disabled = false;
     }
+
+    
   }
 
   // Wait for jQuery to be available
