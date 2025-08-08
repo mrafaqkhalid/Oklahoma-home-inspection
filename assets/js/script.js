@@ -166,7 +166,9 @@ jQuery(document).ready(function($) {
     }
 
     function validateRealtorStep() {
-      return showError('realtorName', 'realtor-name-required', !$('#realtorName').val().trim());
+      // Since realtor fields are optional, we don't need strict validation
+      // Just return true to allow form submission
+      return true;
     }
 
     $('#nextBtn').on('click', function() {
@@ -226,8 +228,14 @@ jQuery(document).ready(function($) {
         { js: 'realtorEmail', php: 'realtor_email' },
         { js: 'realtorPhone', php: 'realtor_phone' },
         { js: 'inspectorNotes', php: 'notes' }
+
       ];
       fields.forEach(field => formData.append(field.php, $(`#${field.js}`).val()));
+      
+      // Handle checkbox separately
+      const nativeChecked = document.getElementById('noRealtorCheck').checked;
+      const noRealtorChecked = (typeof $ !== 'undefined') ? $('#noRealtorCheck').is(':checked') : nativeChecked;
+      formData.append('no_realtor', noRealtorChecked ? '1' : '0');
 
       const selectedServices = $('input[name="additional-services"]:checked')
         .map(function() { return this.value !== 'none' ? this.value : null; }).get();
@@ -259,7 +267,7 @@ jQuery(document).ready(function($) {
             confirmForm.prepend(`<div class="alert alert-danger mt-3"><i class="fas fa-exclamation-circle me-2"></i>${response.data.message}</div>`);
           }
         },
-        error() {
+        error(xhr, status, error) {
           confirmForm.prepend(`<div class="alert alert-danger mt-3"><i class="fas fa-exclamation-circle me-2"></i>An error occurred. Please try again.</div>`);
         },
         complete() {
@@ -316,6 +324,27 @@ jQuery(document).ready(function($) {
     });
 
     updateSteps(currentStep);
+
+    // // Test AJAX functionality
+    // $('#testAjaxBtn').on('click', function() {
+    //   console.log('Testing AJAX...');
+    //   $.ajax({
+    //     url: stl_ajax.ajax_url,
+    //     method: 'POST',
+    //     data: {
+    //       action: 'test_ajax',
+    //       nonce: stl_ajax.nonce
+    //     },
+    //     success(response) {
+    //       console.log('Test AJAX response:', response);
+    //       alert(response.data.message);
+    //     },
+    //     error(xhr, status, error) {
+    //       console.error('Test AJAX error:', { xhr, status, error });
+    //       alert('AJAX test failed');
+    //     }
+    //   });
+    // });
 
     /**
      * 

@@ -662,6 +662,14 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
             <span>Realtor Information</span>
           </div>
 
+            <!-- Checkbox: No Realtor -->
+<div class="form-check mb-2">
+  <input class="form-check-input" type="checkbox" id="noRealtorCheck" onchange="toggleRealtorField()">
+  <label class="form-check-label stretched-clickable" for="noRealtorCheck">
+    No Realtor
+  </label>
+</div>
+
           <div class="row g-4">
             <!-- Realtor Name -->
             <div class="col-md-4">
@@ -670,9 +678,7 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
                 <span class="input-group-text bg-transparent">
                   <i class="fas fa-user text-muted small-icon"></i>
                 </span>
-                <input type="text" class="form-control" id="realtorName" placeholder="Your realtor or representative"
-                  required>
-                <div class="invalid-feedback">Please enter your realtor's name</div>
+                <input type="text" class="form-control" id="realtorName" placeholder="Your realtor or representative">
               </div>
             </div>
 
@@ -683,8 +689,7 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
                 <span class="input-group-text bg-transparent">
                   <i class="fas fa-envelope text-muted small-icon"></i>
                 </span>
-                <input type="email" class="form-control" id="realtorEmail" placeholder="Your realtor email" required>
-                <div class="invalid-feedback">Please enter your realtor's email address</div>
+                <input type="email" class="form-control" id="realtorEmail" placeholder="Your realtor email">
               </div>
             </div>
 
@@ -695,8 +700,7 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
                 <span class="input-group-text bg-transparent">
                   <i class="fas fa-phone text-muted small-icon"></i>
                 </span>
-                <input type="tel" class="form-control" id="realtorPhone" placeholder="Your realtor contact" required>
-                <div class="invalid-feedback">Please enter your realtor's phone number</div>
+                <input type="tel" class="form-control" id="realtorPhone" placeholder="Your realtor contact">
               </div>
             </div>
 
@@ -756,5 +760,36 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
     lastScrollTop = currentScroll;
   });
 </script> -->
+
+<script>
+  function toggleRealtorField() {
+    const isChecked = document.getElementById('noRealtorCheck').checked;
+    
+    const realtorName = document.getElementById('realtorName');
+    const realtorEmail = document.getElementById('realtorEmail');
+    const realtorPhone = document.getElementById('realtorPhone');
+
+    if (isChecked) {
+      realtorName.value = '';
+      realtorEmail.value = '';
+      realtorPhone.value = '';
+
+      realtorName.disabled = true;
+      realtorEmail.disabled = true;
+      realtorPhone.disabled = true;
+    } else {
+      realtorName.disabled = false;
+      realtorEmail.disabled = false;
+      realtorPhone.disabled = false;
+    }
+  }
+
+  // Wait for jQuery to be available
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof $ !== 'undefined') {
+      // jQuery is now available
+    }
+  });
+</script>
 
 <?php get_footer(); ?>

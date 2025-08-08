@@ -5,27 +5,20 @@
 
 // Handle form submission
 function handle_inspection_form() {
-    error_log('Inspection form submission started');
-    error_log('POST data: ' . print_r($_POST, true));
-
     // Verify nonce
     if (!check_ajax_referer('stl_nonce', 'nonce', false)) {
-        error_log('Nonce verification failed');
         wp_send_json_error(array('message' => 'Security check failed. Please refresh the page and try again.'));
         return;
     }
-    error_log('Nonce verification passed');
 
     // Validate required fields
     $required_fields = array('date', 'time', 'name', 'phone', 'email', 'address', 'city', 'state', 'zip');
     foreach ($required_fields as $field) {
         if (empty($_POST[$field])) {
-            error_log('Missing required field: ' . $field);
             wp_send_json_error(array('message' => 'Please fill in all required fields.'));
             return;
         }
     }
-    error_log('All required fields present');
 
     // Sanitize and validate data
     $data = array(
@@ -40,45 +33,32 @@ function handle_inspection_form() {
         'state' => sanitize_text_field($_POST['state']),
         'zip' => sanitize_text_field($_POST['zip']),
         'services' => isset($_POST['services']) ? implode(',', array_map('sanitize_text_field', $_POST['services'])) : '',
+        'no_realtor' => (isset($_POST['no_realtor']) && $_POST['no_realtor'] === '1') ? 1 : 0,
         'realtor_name' => isset($_POST['realtor_name']) ? sanitize_text_field($_POST['realtor_name']) : '',
         'realtor_email' => isset($_POST['realtor_email']) ? sanitize_email($_POST['realtor_email']) : '',
         'realtor_phone' => isset($_POST['realtor_phone']) ? sanitize_text_field($_POST['realtor_phone']) : '',
         'notes' => isset($_POST['notes']) ? sanitize_textarea_field($_POST['notes']) : '',
         'created_at' => current_time('mysql')
     );
-    error_log('Data sanitized: ' . print_r($data, true));
 
     // Insert into database
     global $wpdb;
     $table_name = $wpdb->prefix . 'stl_inspections';
     
-    // Check if table exists
-    $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
-    if (!$table_exists) {
-        error_log('Table does not exist, creating it now...');
-        stl_create_inspection_table();
-        
-        // Verify table was created
-        $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
-        if (!$table_exists) {
-            error_log('Failed to create table!');
-            wp_send_json_error(array('message' => 'Database configuration error. Please contact the administrator.'));
-            return;
-        }
-        error_log('Table created successfully');
+    // Verify table exists
+    if (!stl_verify_inspection_table()) {
+        wp_send_json_error(array('message' => 'Database configuration error. Please contact the administrator.'));
+        return;
     }
     
     $result = $wpdb->insert($table_name, $data);
-    error_log('Insert result: ' . ($result === false ? 'Failed: ' . $wpdb->last_error : 'Success'));
 
     if ($result === false) {
-        error_log('DB insert failed: ' . $wpdb->last_error);
         wp_send_json_error(array('message' => 'Failed to save your request. Please try again.'));
         return;
     }
 
     // Send success response
-    error_log('Sending success response');
     wp_send_json_success(array(
         'message' => 'Thank you! Your inspection request has been submitted successfully. We will contact you shortly to confirm your appointment.'
     ));
@@ -105,6 +85,7 @@ function stl_create_inspection_table() {
         state varchar(50) NOT NULL,
         zip varchar(20) NOT NULL,
         services text,
+        no_realtor tinyint(1) DEFAULT 0,
         realtor_name varchar(100),
         realtor_email varchar(100),
         realtor_phone varchar(30),
@@ -117,6 +98,32 @@ function stl_create_inspection_table() {
     dbDelta($sql);
 }
 add_action('after_switch_theme', 'stl_create_inspection_table');
+
+// Verify and create inspection table if it doesn't exist
+function stl_verify_inspection_table() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'stl_inspections';
+    
+    // Check if table exists
+    $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
+    
+    if (!$table_exists) {
+        stl_create_inspection_table();
+        
+        // Verify table was created
+        $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
+        if (!$table_exists) {
+            return false;
+        }
+    } else {
+        // Check if no_realtor column exists, add it if it doesn't
+        $column_exists = $wpdb->get_var("SHOW COLUMNS FROM $table_name LIKE 'no_realtor'");
+        if (!$column_exists) {
+            $wpdb->query("ALTER TABLE $table_name ADD COLUMN no_realtor tinyint(1) DEFAULT 0");
+        }
+    }
+    return true;
+}
 
 // Helper function to display services in a readable way
 // Usage: echo stl_display_services($row['services']);
@@ -166,33 +173,26 @@ function stl_verify_contact_table() {
     $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
     
     if (!$table_exists) {
-        error_log('Contact table does not exist, creating it now...');
         stl_create_contact_table();
         
         // Verify table was created
         $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
         if (!$table_exists) {
-            error_log('Failed to create contact table!');
             return false;
         }
-        error_log('Contact table created successfully');
     }
     return true;
 }
 
 // Handle contact form submission
 function handle_contact_form() {
-    error_log('Contact Form AJAX POST: ' . print_r($_POST, true));
-
     if (!check_ajax_referer('stl_nonce', 'nonce', false)) {
-        error_log('Contact form nonce verification failed');
         wp_send_json_error(array('message' => 'Security check failed. Please refresh the page and try again.'));
         return;
     }
 
     // Verify table exists
     if (!stl_verify_contact_table()) {
-        error_log('Contact table verification failed');
         wp_send_json_error(array('message' => 'Database configuration error. Please contact the administrator.'));
         return;
     }
@@ -201,7 +201,6 @@ function handle_contact_form() {
     $required_fields = array('name', 'email', 'message');
     foreach ($required_fields as $field) {
         if (empty($_POST[$field])) {
-            error_log('Missing required field: ' . $field);
             wp_send_json_error(array('message' => 'Please fill in all required fields.'));
             return;
         }
@@ -224,7 +223,6 @@ function handle_contact_form() {
         $result = $wpdb->insert($table_name, $data);
 
         if ($result === false) {
-            error_log('Contact DB insert failed: ' . $wpdb->last_error);
             wp_send_json_error(array(
                 'message' => 'Failed to submit contact form. Please try again.'
             ));
@@ -246,7 +244,6 @@ function handle_contact_form() {
             ));
         }
     } catch (Exception $e) {
-        error_log('Exception in contact form handler: ' . $e->getMessage());
         wp_send_json_error(array(
             'message' => 'An unexpected error occurred. Please try again.'
         ));

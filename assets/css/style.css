@@ -1386,14 +1386,14 @@ input[type="date"].error {
   font-weight: 700;
 }
 
-.form-check-label {
+/* .form-check-label {
   font-weight: 500;
-}
+} */
 
-.form-check-input:checked {
+/* .form-check-input:checked {
   background-color: #e32f2c;
   border-color: #e32f2c;
-}
+} */
 
 .btn-primary {
   background-color: #e32f2c;
@@ -1479,6 +1479,29 @@ input[type="date"].error {
 .step-item.active .step-label {
   color: #212529;
 }
+
+/* realtor custom checkbox */
+
+  /* Optional: increase checkbox size if needed */
+  .form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.2rem; /* aligns checkbox vertically */
+    cursor: pointer;
+  }
+
+  /* ✅ Ensures the label is fully clickable */
+  .form-check-label {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.5;
+  }
+
+  /* 👇 Optional: stretches clickable area */
+  .stretched-clickable {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 
 /* Custom Alert */
 .custom-alert {
@@ -3033,4 +3056,18 @@ button.btn.btn-sm:hover {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.15) !important;
   opacity: 1;
   animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Responsive fix for <992px: inherit width from parent */
+@media (max-width: 992px) {
+  #timePickerPanel {
+    position: static !important;         /* Removes fixed positioning */
+    width: 100% !important;              /* Full width of parent */
+    max-width: 100% !important;          /* Prevent overflow */
+    left: auto !important;
+    top: auto !important;
+    box-shadow: none !important;         /* Optional: remove shadow for mobile */
+    border-radius: 0 !important;         /* Optional: flat edges on mobile */
+    z-index: auto !important;            /* Reset if overlapping */
+  }
 }

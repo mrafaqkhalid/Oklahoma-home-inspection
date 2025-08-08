@@ -108,6 +108,14 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/form-handler.php';
 
+// Test AJAX functionality
+add_action('wp_ajax_test_ajax', 'test_ajax_function');
+add_action('wp_ajax_nopriv_test_ajax', 'test_ajax_function');
+
+function test_ajax_function() {
+    wp_send_json_success(array('message' => 'AJAX is working!'));
+}
+
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
