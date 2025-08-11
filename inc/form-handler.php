@@ -198,7 +198,7 @@ function handle_contact_form() {
     }
 
     // Validate required fields
-    $required_fields = array('name', 'email', 'message');
+    $required_fields = array('name', 'email', 'message', 'subject');
     foreach ($required_fields as $field) {
         if (empty($_POST[$field])) {
             wp_send_json_error(array('message' => 'Please fill in all required fields.'));

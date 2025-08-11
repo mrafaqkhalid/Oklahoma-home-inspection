@@ -33,17 +33,20 @@
           </div>
           <div class="mb-3">
             <label for="contactPhone" class="form-label">Your Phone</label>
-            <input type="tel" class="form-control" id="contactPhone" name="phone">
+            <input type="tel" class="form-control optional" id="contactPhone" name="phone">
           </div>
           <div class="mb-3">
-            <label for="contactSubject" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="contactSubject" name="subject">
+            <label for="contactSubject" class="form-label">Subject <span class="text-danger">*</span> </label>
+            <input type="text" class="form-control" id="contactSubject" name="subject" required>
+            <div class="invalid-feedback">Please enter a subject.</div>
           </div>
-          <div class="mb-3">
-            <label for="contactMessage" class="form-label">Message <span class="text-danger">*</span></label>
-            <textarea class="form-control" id="contactMessage" name="message" rows="5" required="" style="height: auto;"></textarea>
-            <div class="invalid-feedback">Please enter your message.</div>
-          </div>
+        <div class="mb-3">
+          <label for="contactMessage" class="form-label">
+            Message <span class="text-danger">*</span>
+          </label>
+          <textarea class="form-control" id="contactMessage" name="message" required rows="5" style="height: auto;"></textarea>
+          <div class="invalid-feedback">Please enter a message.</div>
+        </div>
           <div class="d-flex justify-content-end">
             <button type="submit" class="next-previous-btn btn-danger" id="contactSubmitBtn">
               Send Message <i class="fas fa-paper-plane ms-2"></i>

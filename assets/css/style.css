@@ -1669,6 +1669,16 @@ input[type="date"].error {
   font-weight: 600;
 }
 
+.pricing-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* base shadow */
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* deeper shadow */
+}
+
 /* Service Card States */
 .service-compact-label:hover {
   border-color: #e32f2c;
@@ -1845,6 +1855,12 @@ text-area.form-select {
   /* box-shadow: 0 0 0 0.2rem rgba(187, 10, 36, 0.15); */
 }
 
+/* Light green focus only for optional fields */
+.form-control.optional:focus {
+  border-color: #198754; /* Bootstrap success green */
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25); /* subtle matching glow */
+}
+
 .service-compact-label:hover {
   border-color: #e32f2c;
   box-shadow: 0 4px 8px rgba(187, 10, 36, 0.1);
@@ -1864,9 +1880,6 @@ text-area.form-select {
   background: #f8f9fa;
 }
 
-.price-small {
-  color: #e32f2c;
-}
 
 .recommended-badge {
   border: 1px dashed #e32f2c;

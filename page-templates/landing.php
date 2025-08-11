@@ -612,7 +612,7 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
               <!-- Apartment/Suite -->
               <div class="col-md-3">
                 <label for="aptSuite" class="form-label">Apt/Suite <span class="text-muted">(Optional)</span></label>
-                <input type="text" class="form-control" id="aptSuite" placeholder="Apt or Suite number">
+                <input type="text" class="form-control optional" id="aptSuite" placeholder="Apt or Suite number">
               </div>
 
               <!-- City -->
@@ -783,8 +783,13 @@ One Time treatments $95-$300<br> Monthly/Quarterly Plans $50 - $500
       realtorPhone.disabled = false;
     }
 
-    
+        // Optional: Toggle text-danger class for label
+        const label = document.querySelector("label[for='noRealtorCheck']");
+    if (label) {
+      label.classList.toggle("text-danger", isChecked);
+    }
   }
+  
 
   // Wait for jQuery to be available
   document.addEventListener('DOMContentLoaded', function() {
