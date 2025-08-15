@@ -26,6 +26,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/src/tornado-icon.png" type="image/png">
+  <meta name="google-site-verification" content="v1D-Cj3ReGfIF8Lxw1PcXsNEW_vdDVOSibAFI7Y0FF8">
 
   <?php wp_head(); ?>
 </head>
