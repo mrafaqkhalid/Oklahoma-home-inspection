@@ -1,31 +1,39 @@
 <?php
 /**
  * The header for our theme
- *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
  * @package STL
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Canonical URL -->
+  <?php global $wp; ?>
+  <link rel="canonical" href="<?php echo esc_url( home_url( add_query_arg( array(), $wp->request ) ) ); ?>" />
+
+  <!-- Basic Site Info -->
   <link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/src/tornado-icon.png" type="image/png">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="<?php bloginfo('description'); ?>">
+  <meta name="robots" content="index, follow">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Flatpickr -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
 
   <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/src/tornado-icon.png" type="image/png">
 
   <?php wp_head(); ?>
 </head>
