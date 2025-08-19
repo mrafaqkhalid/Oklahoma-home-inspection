@@ -14,8 +14,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Canonical URL -->
-  <?php global $wp; ?>
-  <link rel="canonical" href="<?php echo esc_url( home_url( add_query_arg( array(), $wp->request ) ) ); ?>" />
+  <?php if ( function_exists('wp_get_canonical_url') ) : ?>
+      <link rel="canonical" href="<?php echo esc_url( wp_get_canonical_url() ); ?>" />
+  <?php endif; ?>
 
   <!-- Basic Site Info -->
   <link rel="profile" href="https://gmpg.org/xfn/11">
@@ -23,7 +24,11 @@
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="<?php bloginfo('description'); ?>">
-  <meta name="robots" content="index, follow">
+  <?php if ( ! is_page('thank-you') && ! is_page('login') ) : ?>
+      <meta name="robots" content="index, follow">
+  <?php else : ?>
+      <meta name="robots" content="noindex, follow">
+  <?php endif; ?>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -34,7 +39,6 @@
 
   <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
 
   <?php wp_head(); ?>
 </head>
